@@ -1,0 +1,38 @@
+.terminal {
+  float: left;
+  margin: 0;
+  padding: 0;
+  font-family: Menlo, Courier New;
+  font-size: 18px;
+  text-rendering: optimizeLegibility;
+  font-weight: bold;
+  color: white;
+
+  .terminal--input {
+    counter-increment: input;
+    &:before {
+      content: "[" counter(input) "] $ ";
+    }
+    &:last-child:after {
+      -webkit-animation: blink 0.75s infinite;
+      -moz-animation: blink 0.75s infinite;
+      -o-animation: blink 0.75s infinite;
+      animation: blink 0.75s infinite;
+      margin-left: 5px;
+      width: 28px;
+      content: "|";
+      background: white;
+    }
+  }
+
+  .terminal--output {
+    .is-console:before {
+      margin-right: 10px;
+      content: ">";
+    }
+    .is-not-defined:before {
+      content: "undefined";
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}

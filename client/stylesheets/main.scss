@@ -1,0 +1,39 @@
+/**** Settings ****/
+@import "01-settings/_settings.defaults.scss";
+@import "01-settings/_settings.defaults.scss";
+@import "04-base/_base.page.scss";
+@import "06-components/_components.terminal.scss";
+
+
+@-webkit-keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-moz-keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-ms-keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
