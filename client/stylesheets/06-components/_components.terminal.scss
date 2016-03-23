@@ -1,27 +1,27 @@
+/*!
+ * console-game, by @iGitScor
+ *
+ * github.com/iGitScor | console-game
+ */
+/*------------------------------------*\
+    #TERMINAL
+\*------------------------------------*/
+
+
+
 .terminal {
-  float: left;
   margin: 0;
   padding: 0;
   font-family: Menlo, Courier New;
-  font-size: 18px;
+  font-size: $cg-base-font-size;
   text-rendering: optimizeLegibility;
   font-weight: bold;
-  color: white;
+  color: $cg-base-text-color;
 
   .terminal--input {
-    counter-increment: input;
     &:before {
-      content: "[" counter(input) "] $ ";
-    }
-    &:last-child:after {
-      -webkit-animation: blink 0.75s infinite;
-      -moz-animation: blink 0.75s infinite;
-      -o-animation: blink 0.75s infinite;
-      animation: blink 0.75s infinite;
-      margin-left: 5px;
-      width: 28px;
-      content: "|";
-      background: white;
+      content: "[iScor@react]$ ";
+      color: yellow;
     }
   }
 

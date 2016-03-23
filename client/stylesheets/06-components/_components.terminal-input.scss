@@ -1,0 +1,36 @@
+/*!
+ * console-game, by @iGitScor
+ *
+ * github.com/iGitScor | console-game
+ */
+/*------------------------------------*\
+    #TERMINAL-INPUT
+\*------------------------------------*/
+
+
+
+.terminal--input-field {
+  border: none;
+  background-color: transparent;
+  font-family: Menlo, Courier New;
+  font-size: $cg-base-font-size;
+  text-rendering: optimizeLegibility;
+  font-weight: bold;
+  color: transparent;
+  text-shadow: 0 0 0 $cg-base-text-color;
+  outline: none;
+}
+
+
+
+.terminal--input-field[size="1"] {
+  width: 14px;
+}
+
+
+
+// Empty input
+.terminal--input-field:not([size]),
+.terminal--input-field[size="0"] {
+  width: 1px;
+}

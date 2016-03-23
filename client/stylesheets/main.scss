@@ -1,39 +1,15 @@
 /**** Settings ****/
 @import "01-settings/_settings.defaults.scss";
-@import "01-settings/_settings.defaults.scss";
+/**** Tools ****/
+@import "02-tools/_tools.mixins.scss";
+/**** Generic ****/
+@import "03-generic/_generic.normalize.scss";
+/**** Base ****/
 @import "04-base/_base.page.scss";
+/**** Objects ****/
+@import "05-objects/_objects.form-inline.scss";
+@import "05-objects/_objects.list-unstyled.scss";
+/**** Components ****/
 @import "06-components/_components.terminal.scss";
-
-
-@-webkit-keyframes blink {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@-moz-keyframes blink {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@-ms-keyframes blink {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@keyframes blink {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
+@import "06-components/_components.terminal-input.scss";
+@import "06-components/_components.terminal-cursor.scss";
