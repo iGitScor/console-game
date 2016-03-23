@@ -1,0 +1,17 @@
+/*!
+ * console-game, by @iGitScor
+ *
+ * github.com/iGitScor | console-game
+ */
+/*------------------------------------*\
+    #CURSOR-BLINK
+\*------------------------------------*/
+
+
+
+.terminal--cursor-blink:after {
+  @include blink-animation();
+  width: 28px;
+  content: "|";
+  background: $cg-base-text-color;
+}

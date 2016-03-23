@@ -1,0 +1,44 @@
+/*!
+ * console-game, by @iGitScor
+ *
+ * github.com/iGitScor | console-game
+ */
+///*------------------------------------*\
+//    #DEFAULTS
+//\*------------------------------------*/
+
+// These variables are cg’s defaults; they should not be modified or
+// adjusted directly; you should predefine the variables in your own project.
+
+
+
+
+
+// High-level base settings.
+$cg-base-font-size:          16px !default;
+$cg-base-line-height:        24px !default;
+$cg-base-text-color:         #FFF !default;
+$cg-base-background-color:   #002728 !default;
+
+
+
+
+
+// Namespace.
+//
+// Would you like cgcss’ classes to be prepended with a namespace? If so,
+// define it here.
+$cg-namespace:               null !default;
+
+
+
+
+
+// These variables are framework variables, sourced from variables defined
+// above. Feel free to use these variables throughout your project, but do not
+// modify or reassign them.
+$cg-base-spacing-unit:           $cg-base-line-height;
+$cg-base-spacing-unit--tiny:     round($cg-base-spacing-unit / 4);
+$cg-base-spacing-unit--small:    round($cg-base-spacing-unit / 2);
+$cg-base-spacing-unit--large:    round($cg-base-spacing-unit * 2);
+$cg-base-spacing-unit--huge:     round($cg-base-spacing-unit * 4);

@@ -1,0 +1,50 @@
+/*!
+ * console-game, by @iGitScor
+ *
+ * github.com/iGitScor | console-game
+ */
+/*------------------------------------*\
+    #MIXINS
+\*------------------------------------*/
+
+
+
+@-webkit-keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-moz-keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-ms-keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@mixin blink-animation($duration: 0.75s) {
+  -webkit-animation: blink $duration infinite;
+  -moz-animation: blink $duration infinite;
+  -o-animation: blink $duration infinite;
+  animation: blink $duration infinite;
+}
