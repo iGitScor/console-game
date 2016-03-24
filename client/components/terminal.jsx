@@ -15,7 +15,7 @@ App = React.createClass({
 
   renderTasks() {
     // Get tasks from this.data.tasks
-    return this.data.tasks.map((task) => {
+    return this.data.tasks.map(function (task) {
       return <Task key={task._id} task={task} />;
     });
   },
