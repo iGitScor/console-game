@@ -56,13 +56,13 @@ App = React.createClass({
     return (
       <div className="container terminal">
         <header>
-          <h1>Console</h1>
+          <h1>{i18n.__('console')}</h1>
         </header>
         <ul className="list-unstyled">
           {this.renderTasks()}
           <li className="terminal--input">
             <form
-              className="new-task form-inline terminal--cursor-blink"
+              className="form-inline terminal--cursor-blink"
               ref="termForm"
               onSubmit={this.handleSubmit}>
               <input
