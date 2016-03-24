@@ -15,7 +15,7 @@ App = React.createClass({
 
   renderTasks() {
     // Get tasks from this.data.tasks
-    return this.data.tasks.map((task) => {
+    return this.data.tasks.map(function (task) {
       return <Task key={task._id} task={task} />;
     });
   },
@@ -24,7 +24,7 @@ App = React.createClass({
     event.preventDefault();
 
     // Find the text field via the React ref
-    var text = React.findDOMNode(this.refs.termInput).value.trim();
+    var text = ReactDOM.findDOMNode(this.refs.termInput).value.trim();
 
     Tasks.insert({
       text: text,
@@ -32,23 +32,24 @@ App = React.createClass({
     });
 
     // Clear form
-    React.findDOMNode(this.refs.termInput).value = '';
-    React.findDOMNode(this.refs.termInput).setAttribute('size', 0);
+    ReactDOM.findDOMNode(this.refs.termInput).value = '';
+    ReactDOM.findDOMNode(this.refs.termInput).setAttribute('size', 0);
   },
 
   changeSize() {
-    React.findDOMNode(this.refs.termInput).setAttribute(
+    ReactDOM.findDOMNode(this.refs.termInput).setAttribute(
       'size',
-      Math.max(React.findDOMNode(this.refs.termInput).value.length, 0)
+      Math.max(ReactDOM.findDOMNode(this.refs.termInput).value.length, 0)
     );
   },
 
   focusInput() {
-    React.findDOMNode(this.refs.termForm).classList.add('terminal--cursor-blink');
+    if (this.refs.termForm)
+    ReactDOM.findDOMNode(this.refs.termForm).classList.add('terminal--cursor-blink');
   },
 
   blurInput() {
-    React.findDOMNode(this.refs.termForm).classList.remove('terminal--cursor-blink');
+    ReactDOM.findDOMNode(this.refs.termForm).classList.remove('terminal--cursor-blink');
   },
 
   render() {
