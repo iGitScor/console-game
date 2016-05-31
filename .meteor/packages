@@ -21,3 +21,4 @@ insecure                # Allow all DB writes from clients (for prototyping)
 react
 fourseven:scss
 universe:i18n
+aldeed:collection2

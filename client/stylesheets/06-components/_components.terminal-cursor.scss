@@ -8,7 +8,6 @@
 \*------------------------------------*/
 
 
-
 .terminal--cursor-blink:after {
   @include blink-animation();
   width: 28px;

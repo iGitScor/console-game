@@ -8,7 +8,6 @@
 \*------------------------------------*/
 
 
-
 .terminal {
   margin: 0;
   padding: 0;
@@ -30,6 +29,7 @@
       margin-right: 10px;
       content: ">";
     }
+
     .is-not-defined:before {
       content: "undefined";
       color: rgba(255, 255, 255, 0.5);
