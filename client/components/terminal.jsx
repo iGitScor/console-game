@@ -4,19 +4,23 @@ App = React.createClass({
   // This mixin makes the getMeteorData method work
   mixins: [ReactMeteorData],
 
-  // Loads items from the Tasks collection and puts them on this.data.tasks
+  // Loads items from the Logs collection and puts them on this.data.logs
   getMeteorData() {
     let query = {};
 
     return {
-      tasks: Tasks.find(query, {}).fetch(),
+      logs: Logs.find(query, {}).fetch(),
     };
   },
 
-  renderTasks() {
-    // Get tasks from this.data.tasks
-    return this.data.tasks.map(function (task) {
-      return <Task key={task._id} task={task} />;
+  renderAction() {
+    return <Action />;
+  },
+
+  renderLogs() {
+    // Get logs from this.data.logs
+    return this.data.logs.map(function (log) {
+      return <Log key={log._id} log={log} />;
     });
   },
 
@@ -26,7 +30,7 @@ App = React.createClass({
     // Find the text field via the React ref
     var text = ReactDOM.findDOMNode(this.refs.termInput).value.trim();
 
-    Tasks.insert({
+    Logs.insert({
       text: text,
       createdAt: new Date(), // current time
     });
@@ -44,25 +48,29 @@ App = React.createClass({
   },
 
   focusInput() {
-    if (this.refs.termForm)
-    ReactDOM.findDOMNode(this.refs.termForm).classList.add('terminal--cursor-blink');
+    if (this.refs.termForm) {
+      ReactDOM.findDOMNode(this.refs.termForm).classList.add('terminal--cursor-blink');
+    }
   },
 
   blurInput() {
-    ReactDOM.findDOMNode(this.refs.termForm).classList.remove('terminal--cursor-blink');
+    if (this.refs.termForm) {
+      ReactDOM.findDOMNode(this.refs.termForm).classList.remove('terminal--cursor-blink');
+    }
   },
 
   render() {
     return (
       <div className="container terminal">
         <header>
-          <h1>Console</h1>
+          <h1>{i18n.__('console')}</h1>
         </header>
         <ul className="list-unstyled">
-          {this.renderTasks()}
+          {this.renderLogs()}
+          {this.renderAction()}
           <li className="terminal--input">
             <form
-              className="new-task form-inline terminal--cursor-blink"
+              className="form-inline terminal--cursor-blink"
               ref="termForm"
               onSubmit={this.handleSubmit}>
               <input

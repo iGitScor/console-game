@@ -1,17 +1,19 @@
-// Task component - represents a single todo item
-Task = React.createClass({
-  propTypes: {
-    task: React.PropTypes.object.isRequired,
-  },
-
+// Log component - represents a single todo item
+Log = React.createClass({
   render() {
-    // Give tasks a different className when they are checked off,
-    // so that we can style them nicely in CSS
-    const taskClassName = this.props.task.checked ? 'checked' : '';
-
     return (
-      <li className={taskClassName + ' terminal--input'}>
-        <span className="text">{this.props.task.text}</span>
+      <li className={'terminal--input'}>
+        <span className="text">{this.props.log.text}</span>
+      </li>
+    );
+  },
+});
+
+Action = React.createClass({
+  render() {
+    return (
+      <li className={'terminal--output'}>
+        <span className="is-console">Go fuck yourself ?</span>
       </li>
     );
   },

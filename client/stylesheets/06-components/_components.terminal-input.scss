@@ -8,7 +8,6 @@
 \*------------------------------------*/
 
 
-
 .terminal--input-field {
   border: none;
   background-color: transparent;
@@ -19,18 +18,13 @@
   color: transparent;
   text-shadow: 0 0 0 $cg-base-text-color;
   outline: none;
-}
 
+  &[size="1"] {
+    width: $cg-base-font-size;
+  }
 
-
-.terminal--input-field[size="1"] {
-  width: 14px;
-}
-
-
-
-// Empty input
-.terminal--input-field:not([size]),
-.terminal--input-field[size="0"] {
-  width: 1px;
+  &[size="0"],
+  &:not([size]) {
+    width: 1px;
+  }
 }

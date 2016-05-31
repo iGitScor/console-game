@@ -1,14 +1,19 @@
 /**** Settings ****/
 @import "01-settings/_settings.defaults.scss";
+
 /**** Tools ****/
-@import "02-tools/_tools.mixins.scss";
+@import "02-tools/_tools.animations.scss";
+
 /**** Generic ****/
 @import "03-generic/_generic.normalize.scss";
+
 /**** Base ****/
 @import "04-base/_base.page.scss";
+
 /**** Objects ****/
 @import "05-objects/_objects.form-inline.scss";
 @import "05-objects/_objects.list-unstyled.scss";
+
 /**** Components ****/
 @import "06-components/_components.terminal.scss";
 @import "06-components/_components.terminal-input.scss";
