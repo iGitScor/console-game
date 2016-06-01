@@ -9,30 +9,30 @@
 
 
 .terminal {
-  margin: 0;
-  padding: 0;
-  font-family: Menlo, Courier New;
-  font-size: $cg-base-font-size;
-  text-rendering: optimizeLegibility;
-  font-weight: bold;
-  color: $cg-base-text-color;
+    margin: 0;
+    padding: 0;
+    font-family: Menlo, Courier New;
+    font-size: $cg-base-font-size;
+    text-rendering: optimizeLegibility;
+    font-weight: bold;
+    color: $cg-base-text-color;
 
-  .terminal--input {
-    &:before {
-      content: "[iScor@react]$ ";
-      color: yellow;
-    }
-  }
-
-  .terminal--output {
-    .is-console:before {
-      margin-right: 10px;
-      content: ">";
+    .terminal__input {
+        &:before {
+            content: '[iScor@react]$ ';
+            color: $cg-base-input-color;
+        }
     }
 
-    .is-not-defined:before {
-      content: "undefined";
-      color: rgba(255, 255, 255, 0.5);
+    .terminal__output {
+        .is-console:before {
+            margin-right: 10px;
+            content: '>';
+        }
+
+        .is-not-defined:before {
+            content: 'undefined';
+            color: $cg-base-undefined-color;
+        }
     }
-  }
 }

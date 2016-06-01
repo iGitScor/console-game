@@ -49,13 +49,13 @@ App = React.createClass({
 
   focusInput() {
     if (this.refs.termForm) {
-      ReactDOM.findDOMNode(this.refs.termForm).classList.add('terminal--cursor-blink');
+      ReactDOM.findDOMNode(this.refs.termForm).classList.add('terminal__cursor--blink');
     }
   },
 
   blurInput() {
     if (this.refs.termForm) {
-      ReactDOM.findDOMNode(this.refs.termForm).classList.remove('terminal--cursor-blink');
+      ReactDOM.findDOMNode(this.refs.termForm).classList.remove('terminal__cursor--blink');
     }
   },
 
@@ -65,18 +65,18 @@ App = React.createClass({
         <header>
           <h1>{i18n.__('console')}</h1>
         </header>
-        <ul className="list-unstyled">
+        <ul className="list--unstyled">
           {this.renderLogs()}
           {this.renderAction()}
-          <li className="terminal--input">
+          <li className="terminal__input">
             <form
-              className="form-inline terminal--cursor-blink"
+              className="form--inline terminal__cursor--blink"
               ref="termForm"
               onSubmit={this.handleSubmit}>
               <input
                 type="text"
                 size="0"
-                className="terminal--input-field"
+                className="terminal__input-field"
                 autoFocus={'true'}
                 ref="termInput"
                 onFocus={this.focusInput}

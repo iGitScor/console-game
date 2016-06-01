@@ -8,23 +8,23 @@
 \*------------------------------------*/
 
 
-.terminal--input-field {
-  border: none;
-  background-color: transparent;
-  font-family: Menlo, Courier New;
-  font-size: $cg-base-font-size;
-  text-rendering: optimizeLegibility;
-  font-weight: bold;
-  color: transparent;
-  text-shadow: 0 0 0 $cg-base-text-color;
-  outline: none;
+.terminal__input-field {
+    border: none;
+    background-color: transparent;
+    font-family: Menlo, Courier New;
+    font-size: $cg-base-font-size;
+    text-rendering: optimizeLegibility;
+    font-weight: bold;
+    color: transparent;
+    text-shadow: 0 0 0 $cg-base-text-color;
+    outline: none;
 
-  &[size="1"] {
-    width: $cg-base-font-size;
-  }
+    &[size='1'] {
+        width: $cg-base-font-size;
+    }
 
-  &[size="0"],
-  &:not([size]) {
-    width: 1px;
-  }
+    &[size='0'],
+    &:not([size]) {
+        width: 1px;
+    }
 }

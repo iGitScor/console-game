@@ -2,7 +2,7 @@
 Log = React.createClass({
   render() {
     return (
-      <li className={'terminal--input'}>
+      <li className={'terminal__input'}>
         <span className="text">{this.props.log.text}</span>
       </li>
     );
@@ -12,7 +12,7 @@ Log = React.createClass({
 Action = React.createClass({
   render() {
     return (
-      <li className={'terminal--output'}>
+      <li className={'terminal__output output--action'}>
         <span className="is-console">Go fuck yourself ?</span>
       </li>
     );

@@ -1,20 +1,23 @@
 /**** Settings ****/
-@import "01-settings/_settings.defaults.scss";
+@import '01-settings/_settings.defaults';
 
 /**** Tools ****/
-@import "02-tools/_tools.animations.scss";
+@import '02-tools/_tools.animations';
 
 /**** Generic ****/
-@import "03-generic/_generic.normalize.scss";
+@import '03-generic/_generic.normalize';
 
 /**** Base ****/
-@import "04-base/_base.page.scss";
+@import '04-base/_base.page';
 
 /**** Objects ****/
-@import "05-objects/_objects.form-inline.scss";
-@import "05-objects/_objects.list-unstyled.scss";
+@import '05-objects/_objects.form-inline';
+@import '05-objects/_objects.list-unstyled';
 
 /**** Components ****/
-@import "06-components/_components.terminal.scss";
-@import "06-components/_components.terminal-input.scss";
-@import "06-components/_components.terminal-cursor.scss";
+@import '06-components/_components.terminal';
+@import '06-components/_components.terminal-input';
+@import '06-components/_components.terminal-cursor';
+
+/**** Trumps ****/
+@import '07-trumps/_trumps.output-action';

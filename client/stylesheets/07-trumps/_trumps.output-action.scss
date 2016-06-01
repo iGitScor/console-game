@@ -4,12 +4,9 @@
  * github.com/iGitScor | console-game
  */
 /*------------------------------------*\
-    #LIST-UNSTYLED
+    #OUTPUT ACTION
 \*------------------------------------*/
 
-
-.list--unstyled {
-    margin:  0;
-    padding: 0;
-    list-style-type: none;
+.output--action {
+    margin-top: $cg-base-line-height;
 }
