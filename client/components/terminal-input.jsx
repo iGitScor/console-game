@@ -13,7 +13,7 @@ Action = React.createClass({
   render() {
     return (
       <li className={'terminal__output output--action'}>
-        <span className="is-console">Go fuck yourself ?</span>
+        <span className="is-console">{this.props.text}</span>
       </li>
     );
   },

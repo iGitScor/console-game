@@ -14,7 +14,21 @@ App = React.createClass({
   },
 
   renderAction() {
-    return <Action />;
+    if (this.data.logs.length === 0) {
+      action = "What's your name ?";
+    } else if (this.data.logs.length === 1) {
+      action = 'Where do you want to live ?';
+    } else {
+      action = 'What do you want to do ?';
+    }
+
+    // Check if the last answer contains a question
+    if (this.data.logs.length >= 1 &&
+      this.data.logs[(this.data.logs.length - 1)].text.indexOf('?') >= 0) {
+      action = "Don't ask me questions ! " + action;
+    }
+
+    return <Action text={action} />;
   },
 
   renderLogs() {
