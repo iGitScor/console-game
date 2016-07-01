@@ -6,26 +6,21 @@ App = React.createClass({
 
   // Loads items from the Logs collection and puts them on this.data.logs
   getMeteorData() {
-    let query = {};
+    let query = { owner: Meteor.userId() };
 
     return {
+      user: Meteor.userId(),
       logs: Logs.find(query, {}).fetch(),
     };
   },
 
   renderAction() {
-    if (this.data.logs.length === 0) {
-      action = "What's your name ?";
-    } else if (this.data.logs.length === 1) {
-      action = 'Where do you want to live ?';
-    } else {
-      action = 'What do you want to do ?';
-    }
+    action = i18n.__('gameplay.action');
 
     // Check if the last answer contains a question
     if (this.data.logs.length >= 1 &&
       this.data.logs[(this.data.logs.length - 1)].text.indexOf('?') >= 0) {
-      action = "Don't ask me questions ! " + action;
+      action = i18n.__('gameplay.action_again') + action;
     }
 
     return <Action text={action} />;
@@ -45,7 +40,9 @@ App = React.createClass({
     var text = ReactDOM.findDOMNode(this.refs.termInput).value.trim();
 
     Logs.insert({
+      action: 'gameplay.action',
       text: text,
+      owner: Meteor.userId(),
       createdAt: new Date(), // current time
     });
 
@@ -75,31 +72,39 @@ App = React.createClass({
 
   render() {
     return (
-      <div className="container terminal">
+      <main>
         <header>
           <h1>{i18n.__('console')}</h1>
         </header>
-        <ul className="list--unstyled">
-          {this.renderLogs()}
-          {this.renderAction()}
-          <li className="terminal__input">
-            <form
-              className="form--inline terminal__cursor--blink"
-              ref="termForm"
-              onSubmit={this.handleSubmit}>
-              <input
-                type="text"
-                size="0"
-                className="terminal__input-field"
-                autoFocus={'true'}
-                ref="termInput"
-                onFocus={this.focusInput}
-                onBlur={this.blurInput}
-                onChange={this.changeSize} />
-            </form>
-          </li>
-        </ul>
-      </div>
+        <div className="container terminal">
+          {
+            (this.data.user) ?
+
+            <ul className="list--unstyled">
+              {this.renderLogs()}
+              {this.renderAction()}
+              <li className="terminal__input">
+                <form
+                  className="form--inline terminal__cursor--blink"
+                  ref="termForm"
+                  onSubmit={this.handleSubmit}>
+                  <input
+                    type="text"
+                    size="0"
+                    className="terminal__input-field"
+                    autoFocus={'true'}
+                    ref="termInput"
+                    onFocus={this.focusInput}
+                    onBlur={this.blurInput}
+                    onChange={this.changeSize} />
+                </form>
+              </li>
+            </ul>
+            :
+            <Login />
+          }
+        </div>
+      </main>
     );
   },
 });

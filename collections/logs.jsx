@@ -19,8 +19,16 @@ Logs.allow({
 // Contents' policies
 Logs.attachSchema(
   new SimpleSchema({
+    action: {
+      type: String,
+      denyUpdate: true,
+    },
     text: {
       type: String,
+    },
+    owner: {
+      type: String,
+      denyUpdate: true,
     },
     createdAt: {
       type: Date,

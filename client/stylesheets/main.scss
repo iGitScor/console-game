@@ -6,6 +6,7 @@
 
 /**** Generic ****/
 @import '03-generic/_generic.normalize';
+@import '03-generic/_generic.box-sizing';
 
 /**** Base ****/
 @import '04-base/_base.page';
@@ -18,6 +19,15 @@
 @import '06-components/_components.terminal';
 @import '06-components/_components.terminal-input';
 @import '06-components/_components.terminal-cursor';
+@import '06-components/_components.login';
 
 /**** Trumps ****/
 @import '07-trumps/_trumps.output-action';
+
+.hide {
+    display: none;
+}
+
+.error {
+    color: #ed143d;
+}

@@ -1,1 +1,16 @@
 console: Console game 2
+
+state:
+  loading: Loading
+
+login:
+  title: Log in
+  inputs:
+    name: Name
+    location: Location
+  connect: Play
+  error: Bad name or location
+
+gameplay:
+  action: What do you want to do ?
+  action_again: "Don't ask me questions ! "

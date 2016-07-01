@@ -50,3 +50,16 @@
     -o-animation: blink $duration infinite;
     animation: blink $duration infinite;
 }
+
+
+
+
+@keyframes spinner {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(359deg);
+    }
+}

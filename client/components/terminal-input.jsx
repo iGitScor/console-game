@@ -1,9 +1,10 @@
-// Log component - represents a single todo item
+// Log component - represents a single log item
 Log = React.createClass({
   render() {
     return (
       <li className={'terminal__input'}>
-        <span className="text">{this.props.log.text}</span>
+        <small>{i18n.__(this.props.log.action)}</small><br />
+        <span className={'text'}>{this.props.log.text}</span>
       </li>
     );
   },
